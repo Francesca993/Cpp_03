@@ -6,7 +6,7 @@
 /*   By: francesca <francesca@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 17:43:38 by francesca         #+#    #+#             */
-/*   Updated: 2025/12/23 12:19:13 by francesca        ###   ########.fr       */
+/*   Updated: 2025/12/23 12:34:00 by francesca        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ class ClapTrap{
     ~ClapTrap(); 
     
     // Getters
-    void setAttackDamage(int dmg);
     int getEnergyPoints() const;
     int getHitPoints() const;
     int getDamageValue() const;

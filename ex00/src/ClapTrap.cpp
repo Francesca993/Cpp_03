@@ -6,7 +6,7 @@
 /*   By: francesca <francesca@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 18:05:45 by francesca         #+#    #+#             */
-/*   Updated: 2025/12/23 12:20:10 by francesca        ###   ########.fr       */
+/*   Updated: 2025/12/23 12:33:23 by francesca        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,6 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &other){
         this->_attackDamage = other._attackDamage;
     }
     return (*this);
-}
-
-void ClapTrap::setAttackDamage(int dmg){
-    std::cout << GREEN << "You've setted the damege at "<< dmg << RESET << std::endl;
-    this->_attackDamage = dmg;
 }
 
 int ClapTrap::getEnergyPoints() const{
