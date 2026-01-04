@@ -6,7 +6,7 @@
 /*   By: francesca <francesca@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 14:00:26 by francesca         #+#    #+#             */
-/*   Updated: 2026/01/04 17:36:12 by francesca        ###   ########.fr       */
+/*   Updated: 2026/01/04 18:37:37 by francesca        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ ScavTrap::ScavTrap(): ClapTrap("DefaultScavTrap") {
     _attackDamage = 20;
     _guardGate = false;
 
-    std::cout << BG_BLUE << "ScavTrap default constructor called" << RESET << std::endl;
+    std::cout << RED << "ScavTrap default constructor called" << RESET << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name): ClapTrap(name){
@@ -27,11 +27,11 @@ ScavTrap::ScavTrap(std::string name): ClapTrap(name){
     _attackDamage = 20;
     _guardGate = false;
 
-    std::cout << BG_BLUE << "ScavTrap parametric constructor called" << RESET << std::endl;
+    std::cout << RED << "ScavTrap parametric constructor called" << RESET << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap& other){
-    std::cout << BG_BLUE << "ScavTrap Copy constructor called" << RESET << std::endl;
+    std::cout << RED << "ScavTrap Copy constructor called" << RESET << std::endl;
     this->_name = other._name;
     this->_hitPoints = other._hitPoints;
     this->_energyPoints = other._energyPoints;
@@ -40,7 +40,7 @@ ScavTrap::ScavTrap(const ScavTrap& other){
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap &other){
-    std::cout << BG_BLUE << "ScavTrap Copy assignment operator called" << RESET << std::endl;
+    std::cout << RED << "ScavTrap Copy assignment operator called" << RESET << std::endl;
     if (this != &other)
     {
         this->_name = other._name;
@@ -53,7 +53,7 @@ ScavTrap& ScavTrap::operator=(const ScavTrap &other){
 }
 
 ScavTrap::~ScavTrap(){
-    std::cout << BG_BLUE << "ScavTrap Destructor operator called" << RESET << std::endl;
+    std::cout << RED << "ScavTrap Destructor operator called" << RESET << std::endl;
 }
 
 bool ScavTrap::getGuard(){
@@ -63,25 +63,30 @@ bool ScavTrap::getGuard(){
 void ScavTrap::attack(const std::string& target){
     if (this->getHitPoints() <= 0)
     {
-        std::cout << BG_BLUE << "ScavTrap " << _name << " can't attack (no hit points left)."
+        std::cout << RED << "ScavTrap " << _name << " can't attack (no hit points left)."
                   << RESET << std::endl;
         return;
     }
     if (this->getEnergyPoints() <= 0) {
-        std::cout << BG_BLUE << "ScavTrap " << _name
+        std::cout << RED << "ScavTrap " << _name
                   << " can't attack (no energy points left)."
                   << RESET << std::endl;
         return;
     }
     this->_energyPoints -=1;
-    std::cout << BG_BLUE << "ScavTrap " << _name << " attacks " << target << ".";
+    std::cout << RED << "ScavTrap " << _name << " attacks " << target << ".";
     std::cout << " Causing "  << _attackDamage << " points of damage!" 
               << " (EP now: " << _energyPoints << ")" << RESET << std::endl;
 }
 
 void ScavTrap::guardGate(){
     if (this->getGuard() == 0)
-        std::cout << BG_BLUE << "Modality of ScavTrap Guardgate is: OFF" << RESET << std::endl;
+        std::cout << RED << "Modality of ScavTrap Guardgate is: OFF" << RESET << std::endl;
     else
-        std::cout << BG_BLUE << "Modality of ScavTrap Guardgate is: ON" << RESET << std::endl;
+        std::cout << RED << "Modality of ScavTrap Guardgate is: ON" << RESET << std::endl;
+}
+
+std::string ScavTrap::getTypName()
+{ 
+    return ("Scavrap"); 
 }
