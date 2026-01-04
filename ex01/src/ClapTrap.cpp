@@ -6,7 +6,7 @@
 /*   By: francesca <francesca@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 18:05:45 by francesca         #+#    #+#             */
-/*   Updated: 2025/12/29 13:33:19 by francesca        ###   ########.fr       */
+/*   Updated: 2026/01/04 17:04:52 by francesca        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ ClapTrap::~ClapTrap(){
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-    if (_hitPoints <= 0) {
+    if (this->getHitPoints() <= 0) {
         std::cout << RED << "ClapTrap " << _name
                   << " is already destroyed. Can't take more damage."
                   << RESET << std::endl;
@@ -84,13 +84,13 @@ void ClapTrap::takeDamage(unsigned int amount)
 }
 
 void ClapTrap::attack(const std::string& target){
-    if (_hitPoints <= 0)
+    if (this->getHitPoints() <= 0)
     {
         std::cout << RED << "ClapTrap " << _name << " can't attack (no hit points left)."
                   << RESET << std::endl;
         return;
     }
-    if (_energyPoints <= 0) {
+    if (this->getEnergyPoints() <= 0) {
         std::cout << RED << "ClapTrap " << _name
                   << " can't attack (no energy points left)."
                   << RESET << std::endl;
@@ -103,21 +103,21 @@ void ClapTrap::attack(const std::string& target){
 }
 
 void ClapTrap::beRepaired(unsigned int amount){
-    if (_hitPoints <= 0) 
+    if (this->getHitPoints() <= 0) 
     {
         std::cout << RED << "ClapTrap " << _name
                   << " can't be repaired (no hit points left)."
                   << RESET << std::endl;
         return;
     }
-    if (_energyPoints <= 0) {
+    if (this->getEnergyPoints() <= 0) {
     std::cout << RED << "ClapTrap " << _name
               << " can't be repaired (no energy points left)."
               << RESET << std::endl;
         return;
     }
     this->_energyPoints -=1;
-    std::cout << BLUE << "ClapTrap be repaired for " << amount << " points of life"
+    std::cout << BLUE << "ClapTrap " << _name << " be repaired for " << amount << " points of life"
               << " (HP now: " << _hitPoints
               << ", EP now: " << _energyPoints << ")"
               << RESET << std::endl;
