@@ -6,7 +6,7 @@
 /*   By: francesca <francesca@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 17:43:38 by francesca         #+#    #+#             */
-/*   Updated: 2025/12/23 12:34:00 by francesca        ###   ########.fr       */
+/*   Updated: 2026/01/15 12:21:56 by francesca        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ class ClapTrap{
     int getEnergyPoints() const;
     int getHitPoints() const;
     int getDamageValue() const;
-    std::string getName();
+    std::string getName() const;
 
     // Methods
     void attack(const std::string& target);

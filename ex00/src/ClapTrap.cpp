@@ -6,22 +6,22 @@
 /*   By: francesca <francesca@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 18:05:45 by francesca         #+#    #+#             */
-/*   Updated: 2025/12/29 13:33:19 by francesca        ###   ########.fr       */
+/*   Updated: 2026/01/15 12:21:51 by francesca        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap() : _name("DefaultClapTrap"), _hitPoints(10), _energyPoints(10), _attackDamage(0){
-    std::cout << GREEN << "Constructor Default called" << RESET << std::endl;
+    std::cout << GREEN << "ClapTrap Constructor Default called" << RESET << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0){
-    std::cout << GREEN << "Constructor Parametric Default called" << RESET << std::endl;
+    std::cout << GREEN << "ClapTrap Constructor Parametric Default called" << RESET << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& other){
-    std::cout << YELLOW << "Copy constructor called" << RESET << std::endl;
+    std::cout << YELLOW << "ClapTrap Copy constructor called" << RESET << std::endl;
     this->_name = other._name;
     this->_hitPoints = other._hitPoints;
     this->_energyPoints = other._energyPoints;
@@ -29,7 +29,7 @@ ClapTrap::ClapTrap(const ClapTrap& other){
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap &other){
-    std::cout << BLUE << "Copy assignment operator called" << RESET << std::endl;
+    std::cout << BLUE << "ClapTrap Copy assignment operator called" << RESET << std::endl;
     if (this != &other)
     {
         this->_name = other._name;
@@ -52,12 +52,12 @@ int ClapTrap::getDamageValue()const{
     return(this->_attackDamage);
 }
 
-std::string ClapTrap::getName(){
+std::string ClapTrap::getName()const{
     return(this->_name);
 }
 
 ClapTrap::~ClapTrap(){
-    std::cout << MAGENTA << "Destructor operator called" << RESET << std::endl;
+    std::cout << MAGENTA << "ClapTrap Destructor operator called" << RESET << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
@@ -72,15 +72,15 @@ void ClapTrap::takeDamage(unsigned int amount)
     // clamp: se il danno è >= HP, vai direttamente a 0
     if (amount >= static_cast<unsigned int>(_hitPoints)) {
         _hitPoints = 0;
-        std::cout << ORANGE << "You lose " << amount << " points of life." << RESET << std::endl;
-        std::cout << RED << "Your Hit Points are 0. You lose. Can you retry =) " << RESET << std::endl;
+        std::cout << ORANGE << "ClapTrap " << amount << " points of life." << RESET << std::endl;
+        std::cout << RED << "ClapTrap Hit Points are 0. You lose. Can you retry =) " << RESET << std::endl;
         return;
     }
 
     _hitPoints -= static_cast<int>(amount);
 
-    std::cout << ORANGE << "You lose " << amount << " points of life." << RESET << std::endl;
-    std::cout << RED << "Your Hit Points are " << _hitPoints << RESET << std::endl;
+    std::cout << ORANGE << "ClapTrap  " << amount << " points of life." << RESET << std::endl;
+    std::cout << RED << "ClapTrap Hit Points are " << _hitPoints << RESET << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target){
@@ -117,9 +117,9 @@ void ClapTrap::beRepaired(unsigned int amount){
         return;
     }
     this->_energyPoints -=1;
+    this->_hitPoints += static_cast<int>(amount);
     std::cout << BLUE << "ClapTrap be repaired for " << amount << " points of life"
               << " (HP now: " << _hitPoints
               << ", EP now: " << _energyPoints << ")"
               << RESET << std::endl;
-    this->_hitPoints += static_cast<int>(amount);;
 }

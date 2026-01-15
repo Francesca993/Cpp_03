@@ -6,7 +6,7 @@
 /*   By: francesca <francesca@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 18:05:45 by francesca         #+#    #+#             */
-/*   Updated: 2026/01/04 18:43:53 by francesca        ###   ########.fr       */
+/*   Updated: 2026/01/15 11:57:27 by francesca        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,9 +122,9 @@ void ClapTrap::beRepaired(unsigned int amount){
         return;
     }
     this->_energyPoints -=1;
+    this->_hitPoints += static_cast<int>(amount);;
     std::cout << GREEN <<  this->getTypName() << " " << _name << " be repaired for " << amount << " points of life"
               << " (HP now: " << _hitPoints
               << ", EP now: " << _energyPoints << ")"
               << RESET << std::endl;
-    this->_hitPoints += static_cast<int>(amount);;
 }

@@ -6,7 +6,7 @@
 /*   By: francesca <francesca@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 14:00:26 by francesca         #+#    #+#             */
-/*   Updated: 2026/01/04 18:37:37 by francesca        ###   ########.fr       */
+/*   Updated: 2026/01/15 11:43:23 by francesca        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,9 +81,13 @@ void ScavTrap::attack(const std::string& target){
 
 void ScavTrap::guardGate(){
     if (this->getGuard() == 0)
-        std::cout << RED << "Modality of ScavTrap Guardgate is: OFF" << RESET << std::endl;
+    {
+        std::cout << BG_BLUE << "ScavTrap Guardgate enter in modality Gate keeper mode" << RESET << std::endl;
+        this->_guardGate = true;
+        
+    }
     else
-        std::cout << RED << "Modality of ScavTrap Guardgate is: ON" << RESET << std::endl;
+        std::cout << BG_BLUE << "Modality of ScavTrap Guardgate is: ON" << RESET << std::endl;
 }
 
 std::string ScavTrap::getTypName()
