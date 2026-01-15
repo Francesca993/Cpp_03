@@ -6,7 +6,7 @@
 /*   By: francesca <francesca@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 17:46:50 by francesca         #+#    #+#             */
-/*   Updated: 2026/01/15 11:42:54 by francesca        ###   ########.fr       */
+/*   Updated: 2026/01/15 15:27:44 by francesca        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # define BOLD        "\033[1m"
 # define UNDERLINE   "\033[4m"
 
-#include "ClapTrap.hpp"
+#include "ClapTrap_02.hpp"
 
 class FragTrap : public ClapTrap{
     public:
@@ -30,7 +30,7 @@ class FragTrap : public ClapTrap{
     ~FragTrap();
 
     void highFivesGuys(void);
-    std::string getTypName();
+    const std::string getType();
 };
 
 #endif

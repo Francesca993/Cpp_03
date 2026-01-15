@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   ClapTrap_02.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: francesca <francesca@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 17:43:38 by francesca         #+#    #+#             */
-/*   Updated: 2026/01/04 18:36:39 by francesca        ###   ########.fr       */
+/*   Updated: 2026/01/15 15:10:35 by francesca        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-#define CLAPTRAP_HPP
+#ifndef CLAPTRAP_02_HPP
+#define CLAPTRAP_02_HPP
 
 //–––––––––––––––––––––––––––––
 // Colors for Output
@@ -45,8 +45,8 @@ class ClapTrap{
     int getEnergyPoints() const;
     int getHitPoints() const;
     int getDamageValue() const;
-    std::string getName();
-    virtual std::string getTypName();
+    std::string getName() const;
+    virtual const std::string getType();
 
     // Methods
     virtual void attack(const std::string& target);

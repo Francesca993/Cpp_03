@@ -6,12 +6,12 @@
 /*   By: francesca <francesca@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 18:50:53 by francesca         #+#    #+#             */
-/*   Updated: 2026/01/04 18:54:36 by francesca        ###   ########.fr       */
+/*   Updated: 2026/01/15 15:28:59 by francesca        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
+#include "ClapTrap_02.hpp"
+#include "ScavTrap_02.hpp"
 #include "FragTrap.hpp"
 
 int main(void)
