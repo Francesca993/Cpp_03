@@ -6,7 +6,7 @@
 /*   By: francesca <francesca@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 14:00:26 by francesca         #+#    #+#             */
-/*   Updated: 2026/01/15 15:18:35 by francesca        ###   ########.fr       */
+/*   Updated: 2026/01/16 07:07:04 by francesca        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void ScavTrap::guardGate(){
         std::cout << RED << "Modality of ScavTrap Guardgate is: ON" << RESET << std::endl;
 }
 
-const std::string ScavTrap::getType()
+std::string ScavTrap::getType() const
 { 
-    return ("Scavrap"); 
+    return ("ScavTrap"); 
 }

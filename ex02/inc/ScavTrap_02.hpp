@@ -6,7 +6,7 @@
 /*   By: francesca <francesca@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 13:41:21 by francesca         #+#    #+#             */
-/*   Updated: 2026/01/15 15:28:09 by francesca        ###   ########.fr       */
+/*   Updated: 2026/01/16 06:59:35 by francesca        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class ScavTrap : public ClapTrap{
     bool getGuard() const;
     void attack(const std::string& target);
     void guardGate();
-    const std::string getType();
+    std::string getType() const;
 
 };
 

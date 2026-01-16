@@ -6,7 +6,7 @@
 /*   By: francesca <francesca@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 17:46:50 by francesca         #+#    #+#             */
-/*   Updated: 2026/01/15 15:27:44 by francesca        ###   ########.fr       */
+/*   Updated: 2026/01/16 06:59:22 by francesca        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class FragTrap : public ClapTrap{
     ~FragTrap();
 
     void highFivesGuys(void);
-    const std::string getType();
+    std::string getType() const;
 };
 
 #endif

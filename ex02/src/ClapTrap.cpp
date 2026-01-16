@@ -6,7 +6,7 @@
 /*   By: francesca <francesca@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 18:05:45 by francesca         #+#    #+#             */
-/*   Updated: 2026/01/15 15:09:52 by francesca        ###   ########.fr       */
+/*   Updated: 2026/01/16 06:59:57 by francesca        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ std::string ClapTrap::getName() const{
     return(this->_name);
 }
 
-const std::string ClapTrap::getType()
+std::string ClapTrap::getType() const
 { 
     return ("ClapTrap"); 
 }

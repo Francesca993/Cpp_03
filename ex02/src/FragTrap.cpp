@@ -6,7 +6,7 @@
 /*   By: francesca <francesca@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 17:53:23 by francesca         #+#    #+#             */
-/*   Updated: 2026/01/15 15:27:12 by francesca        ###   ########.fr       */
+/*   Updated: 2026/01/16 07:03:00 by francesca        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ FragTrap::FragTrap(): ClapTrap("DefaultFragTrap") {
 
 FragTrap::FragTrap(std::string name): ClapTrap(name) {
     _hitPoints = 100;
-    _energyPoints = 10;
+    _energyPoints = 100;
     _attackDamage = 30;
 
-    std::cout << BLUE << "FragTrap default constructor called" << RESET << std::endl;
+    std::cout << BLUE << "FragTrap Parametric constructor called" << RESET << std::endl;
 }
 
 // FragTrap::FragTrap(const FragTrap& other){
@@ -62,7 +62,7 @@ void FragTrap::highFivesGuys(void){
     std::cout << BLUE << "FragTrap "<< this->getName() << " requests a high five! ✋" << RESET << std::endl;
 }
 
-const std::string FragTrap::getType()
+std::string FragTrap::getType() const
 { 
     return ("FragTrap"); 
 }

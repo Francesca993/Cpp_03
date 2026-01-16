@@ -6,7 +6,7 @@
 /*   By: francesca <francesca@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 17:43:38 by francesca         #+#    #+#             */
-/*   Updated: 2026/01/15 15:10:35 by francesca        ###   ########.fr       */
+/*   Updated: 2026/01/16 06:59:10 by francesca        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ class ClapTrap{
     int getHitPoints() const;
     int getDamageValue() const;
     std::string getName() const;
-    virtual const std::string getType();
+    virtual std::string getType() const;
 
     // Methods
     virtual void attack(const std::string& target);
